@@ -1,17 +1,28 @@
 ---
+- name: determine if zsh is default/current shell
+  shell: echo $SHELL
+  register: current_shell
+
 - name: install zsh
   homebrew: name=zsh state=present
   when: ansible_os_family == 'Darwin'
 
-- name: update oh-my-zsh
-  git: >
-    repo=https://github.com/robbyrussell/oh-my-zsh.git
-    dest=~/.oh-my-zsh
+- name: install prezto
+  git: repo=https://github.com/sorin-ionescu/prezto.git
+       dest=~/.zprezto
+
+- name: install today script
+  git: repo=https://gist.github.com/28798d28a6277e421594.git
+       dest=~/.apps/today
 
 - name: setup zshrc file
-  copy: >
-    dest=~/.zshrc
-    src=zshrc
+  copy: src={{ item }} dest=~/.{{ item }}
+  with_items:
+    - zshrc
+    - zlogin
+    - zlogout
+    - zpreztorc
+    - zshenv
 
 - name: add zsh to list of shells
   lineinfile: >
@@ -19,11 +30,12 @@
     dest=/etc/shells
     regexp=^/usr/local/bin/zsh
     line=/usr/local/bin/zsh
+  sudo: yes
   when: ansible_os_family == 'Darwin'
 
 - name: change to zsh (Mac)
   shell: chsh -s /usr/local/bin/zsh {{ ansible_env.USER }}
-  when: ansible_os_family == 'Darwin'
+  when: current_shell.stdout != '/usr/local/bin/zsh'
 
 - name: change to zsh (Ubuntu)
   shell: chsh -s /usr/bin/zsh {{ ansible_env.USER }}

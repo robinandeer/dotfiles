@@ -1,11 +1,12 @@
 ---
 - hosts: local
   roles:
-    - homebrew
     - common
+    - cask
     - zsh
     - vim
-    - python
-    - ruby
-    - node
-    - dev
+    - fonts
+    - sublime
+    - colors
+    - utilities
+    - scilifelab

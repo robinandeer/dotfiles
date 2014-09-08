@@ -1,0 +1,18 @@
+---
+- name: dotfiles | symlink dotfiles
+  file: src={{ item }}
+        dest=~/{{ item }}
+        state=link
+        force=yes
+  with_items:
+    - .vimrc
+    - .zshrc
+    - .zpreztorc
+    - .zlogin
+    - .zlogout
+    - .zshenv
+    - .inputrc
+    - .gemrc
+    - .gitignore
+    - .gitconfig
+    - .ubervu.sh

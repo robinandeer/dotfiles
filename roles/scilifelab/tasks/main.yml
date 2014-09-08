@@ -1,0 +1,4 @@
+---
+- name: install Tunnelblick configuration
+  copy: src=rapunzel.tblk
+        dest=~/Library/Application\ Support/Tunnelblick/Configurations/

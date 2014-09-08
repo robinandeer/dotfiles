@@ -1,0 +1,79 @@
+{
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"*.scssc"
+	],
+	"bold_folder_labels": true,
+	"caret_extra_width": 1,
+	"caret_style": "phase",
+	"color_scheme": "Packages/Theme - Glacier/glacier.tmTheme",
+	"draw_centered": true,
+	"draw_indent_guides": true,
+	"draw_white_space": "all",
+	"enable_tab_scrolling": true,
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		".DS_Store",
+		"*.map",
+		"*.min.js"
+	],
+	"find_selected_text": true,
+	"findreplace_small": true,
+	"fold_buttons": false,
+	"folder_exclude_patterns":
+	[
+		".git",
+		".bundle",
+		".sass-cache",
+		"node_modules"
+	],
+	"font_face": "Source Code Pro",
+	"font_options":
+	[
+		"no_round"
+	],
+	"font_size": 14,
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"RestructuredText",
+		"Python 3",
+		"PlainTasks",
+		"Markdown",
+		"GitGutter",
+		"Vintage",
+		"Tag",
+		"BracketHighlighter"
+	],
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"rulers":
+	[
+		72,
+		79
+	],
+	"scroll_past_end": true,
+	"show_minimap": false,
+	"tab_size": 2,
+	"tabs_medium": true,
+	"theme": "predawn-DEV.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"wide_caret": true,
+	"word_wrap": true,
+	"wrap_width": 80
+}

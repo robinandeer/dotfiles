@@ -42,6 +42,24 @@ the previous environment that I wanted to keep.
 GitHub's Boxen looked great but overkill, and I wanted to learn Ansible,
 so here we are.
 
+### Fonts
+# Fonts
+- [ ] Bariol (pay with tweet)
+- [x] ClearSans
+- [ ] Entypo (only webfont?)
+- [ ] FuturaLT
+- [x] Inconsolata[-dz for Powerline]
+- [ ] Lato
+- [ ] Minecrafter_3
+- [ ] MyriadPro
+- [ ] OpenSans
+- [ ] PostinkantajaJob
+- [x] Roboto
+- [ ] Sauce Code Powerline
+- [x] SourceCodePro
+- [x] TESLA
+- [ ] Weird
+
 ### Credits
 
 The original inspiration was Michael Griffin's

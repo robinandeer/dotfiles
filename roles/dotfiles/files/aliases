@@ -1,0 +1,99 @@
+# +--------------------------------------------------------------------+
+# | Aliases
+# +--------------------------------------------------------------------+
+# change to the root level directory the current git repository
+alias cdg='cd $(git rev-parse --show-toplevel || pwd)'
+
+# simple clear command
+alias cl='clear'
+
+# be nice
+alias please=sudo
+
+# safety
+alias rm="rm -i"
+alias mv='mv -i'
+alias cp='cp -i'
+
+alias q='exit'
+
+# directory
+alias md='mkdir -p'
+alias rd='rmdir'
+
+# make executable
+alias ax='chmod a+x'
+
+# some OS X-only stuff.
+if [[ "$OSTYPE" == darwin* ]]; then
+  # short-cuts for copy-paste.
+  alias c='pbcopy'
+  alias p='pbpaste'
+  alias path='pwd | pbcopy'
+
+  # remove all items safely, to Trash (`brew install trash`).
+  alias rm='trash'
+
+  # case-insensitive pgrep that outputs full path.
+  alias pgrep='pgrep -fli'
+
+  # show and hide hidden files in Finder
+  alias show-hidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+  alias hide-hidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+else
+  # process grep should output full paths to binaries.
+  alias pgrep='pgrep -fl'
+fi
+
+# +--- Tools. ----------------------------------------------------------------+
+# top defaults
+alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state'
+
+# get week number
+alias week='date +%V'
+
+# IP addresses
+alias ext-ip='dig +short myip.opendns.com @resolver1.opendns.com'
+
+# `cat` with beautiful colors. requires Pygments installed.
+#   sudo easy_install Pygments
+alias pat='pygmentize -O style=solarizeddark -f console256 -g'
+
+# tree
+if [ ! -x "$(which tree 2>/dev/null)" ]
+then
+  alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+fi
+
+# lists the ten most used commands
+alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
+
+# +--- Improvements. ---------------------------------------------------------+
+# disable sertificate check for wget.
+alias wget='wget --no-check-certificate'
+
+# faster NPM for europeans.
+alias npme='npm --registry http://registry.npmjs.eu'
+
+# Conda shortcuts
+alias workon='source activate'
+alias deactivate='source deactivate'
+
+# +--- ls. -------------------------------------------------------------------+
+# detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+  colorflag="--color"
+else  # OS X `ls`
+  colorflag="-G"
+fi
+
+alias sl=ls
+
+# list all files colorized in long format
+alias l="ls -lhF ${colorflag}"
+
+# list all files colorized in long format, including dot files
+alias la="ls -lahF ${colorflag}"
+
+# list only directories
+alias lsd="ls -lhF ${colorflag} | grep --color=never '^d'"

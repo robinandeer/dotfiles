@@ -1,23 +1,22 @@
 ---
+- name: tap dupes
+  homebrew_tap: tap=homebrew/dupes
+
 - name: install CLI tools
   homebrew: name={{ item }} state=present
   with_items:
-    - mercurial
     - tmux
     - tree
-    - augeas
     - readline
-    - s3cmd
-    - siege
-    - tarsnap
     - wget
-    - heroku-toolbelt
     - ack
-    - hub
-    - ctags
-    - sloccount
-    - autoenv
+    - bash
+    - vim
+    - git
+    - ssh-copy-id
+    - zsh
+    - rsync
   when: ansible_os_family == 'Darwin'
 
-- name: Add convenience script
+- name: add convenience script
   copy: src=configure dest=/usr/local/bin/configure

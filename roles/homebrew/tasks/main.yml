@@ -1,4 +1,0 @@
----
-- name: update homebrew
-  command: brew update
-  when: ansible_os_family == 'Darwin'

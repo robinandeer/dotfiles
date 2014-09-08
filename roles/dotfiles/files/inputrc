@@ -1,0 +1,45 @@
+# do not bell on tab-completion
+set bell-style bell
+
+set expand-tilde on
+set show-all-if-ambiguous on
+set horizontal-scroll-mode off
+set mark-directories on
+set mark-symlinked-directories on
+
+# make Tab autocomplete regardless of filename case
+set completion-ignore-case On
+
+# show all autocomplete results at once
+set page-completions off
+
+# ask to show > 200 possible completions for a word
+set completion-query-items 200
+
+# show extra file information when completing, like `ls -F` does
+set visible-stats on
+
+# be more intelligent when autocompleting by also looking at the text after
+# the cursor. For example, when the current line is "cd ~/src/mozil", and
+# the cursor is on the "z", pressing Tab will not autocomplete it to "cd
+# ~/src/mozillail", but to "cd ~/src/mozilla". (This is supported by the
+# Readline used by Bash 4.)
+set skip-completed-text on
+
+# allow UTF-8 input and output, instead of $'\0123\0456'
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# search history with arrow keys
+"\e[A": history-search-backward     # up arrow
+"\e[B": history-search-forward      # down arrow
+"\C-d": kill-whole-line
+
+# for linux console and RH/Debian xterm
+"\e[1~": beginning-of-line
+"\e[4~": end-of-line
+
+# move one word with alt
+"^[C": forward-word
+"^[D": backward-word

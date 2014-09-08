@@ -1,0 +1,8 @@
+---
+- name: ensure target
+  file: path=~/bin state=directory
+
+- name: install
+  copy: src={{ item }} dest="~/bin/" mode=755
+  with_fileglob:
+    - "*"

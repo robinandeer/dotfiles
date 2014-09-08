@@ -1,0 +1,39 @@
+---
+# installs an arbitrary homebrew cask package
+
+- name: install trash CLI
+  homebrew: name=trash state=present
+
+- name: tap cask/versions
+  homebrew_tap: tap=caskroom/versions state=present
+
+- name: install GUI apps
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - iterm2-beta
+    - alfred
+    - appcleaner
+    - bankid
+    - bartender
+    - box-sync
+    - cakebrew
+    - cyberduck
+    - dropbox
+    - github
+    - google-chrome-beta
+    - grandperspective
+    - mesasqlite
+    - plug
+    - sourcetree
+    - spotify
+    - sublime-text-dev
+    - utorrent
+    - vlc
+    - day-o
+    - flux
+    - spectacle
+    - the-unarchiver
+    - tunnelblick-beta
+    - vagrant-manager
+    - vagrant
+    - virtualbox
