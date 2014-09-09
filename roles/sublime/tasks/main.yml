@@ -8,3 +8,6 @@
 - name: install user configurations
   copy: src=Preferences.sublime-settings
         dest="~/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+
+- name: install pyflakes linter
+  pip: name=pyflakes state=present
