@@ -1,48 +1,48 @@
 ---
 - name: download Clear Sans
   get_url: url=https://01.org/sites/default/files/downloads/clear-sans/clearsans-1.00.zip
-           dest=~/Downloads/
+           dest="~/Downloads/"
 
 - name: make extract target for Clear Sans
-  file: path=~/Downloads/clearsans state=directory
+  file: path="~/Downloads/clearsans" state=directory
 
 - name: extract Clear Sans
-  unarchive: src=~/Downloads/clearsans-1.00.zip dest=~/Downloads/clearsans/
+  unarchive: src="~/Downloads/clearsans-1.00.zip" dest="~/Downloads/clearsans/"
 
 - name: install Clear Sans
-  copy: src={{ item }} dest=~/Library/Fonts/
-  with_fileglob: ~/Downloads/clearsans/TTF/*
+  copy: src={{ item }} dest="~/Library/Fonts/"
+  with_fileglob: "~/Downloads/clearsans/TTF/*"
 
 - name: download Source Code Pro
   get_url: url=https://github.com/adobe-fonts/source-code-pro/archive/1.017R.zip
-           dest=~/Downloads/source-code-pro-1.017R.zip
+           dest="~/Downloads/source-code-pro-1.017R.zip"
 
 - name: extract Source Code Pro
-  unarchive: src=~/Downloads/source-code-pro-1.017R.zip dest=~/Downloads/
+  unarchive: src="~/Downloads/source-code-pro-1.017R.zip" dest="~/Downloads/"
 
 - name: install Source Code Pro
-  copy: src={{ item }} dest=~/Library/Fonts/
-  with_fileglob: ~/Downloads/source-code-pro-1.017R/OTF/*
+  copy: src={{ item }} dest="~/Library/Fonts/"
+  with_fileglob: "~/Downloads/source-code-pro-1.017R/OTF/*"
 
 - name: install Inconsolata Regular
   get_url: url=https://googlefontdirectory.googlecode.com/hg/ofl/inconsolata/Inconsolata-Regular.ttf
-           dest=~/Library/Fonts/Inconsolata-Regular.ttf
+           dest="~/Library/Fonts/Inconsolata-Regular.ttf"
 
 - name: install Inconsolata Bold
   get_url: url=https://googlefontdirectory.googlecode.com/hg/ofl/inconsolata/Inconsolata-Bold.ttf
-           dest=~/Library/Fonts/Inconsolata-Bold.ttf
+           dest="~/Library/Fonts/Inconsolata-Bold.ttf"
 
 - name: download Roboto
   get_url: url=http://developer.android.com/downloads/design/roboto-1.2.zip
-           dest=~/Downloads/roboto.zip
+           dest="~/Downloads/roboto.zip"
 
 - name: extract Roboto
   unarchive: src=~/Downloads/roboto.zip dest=~/Downloads/
 
 - name: install Roboto
-  copy: src={{ item }} dest=~/Library/Fonts/
-  with_fileglob: ~/Downloads/Roboto_v1.2/Roboto/*.ttf
+  copy: src={{ item }} dest="~/Library/Fonts/"
+  with_fileglob: "~/Downloads/Roboto_v1.2/Roboto/*.ttf"
 
 - name: install Tesla
   get_url: url=https://dl.dropboxusercontent.com/u/112722970/TESLA.ttf
-           dest=~/Library/Fonts/TESLA.ttf
+           dest="~/Library/Fonts/TESLA.ttf"

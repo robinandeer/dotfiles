@@ -1,8 +1,8 @@
 ---
 - name: preconfigure color swatches
   copy: src=NSColorPanelSwatches.plist
-        dest=~/Library/Colors/
+        dest="~/Library/Colors/"
 
 - name: install developer color picker
   copy: src=DeveloperColorPicker.colorPicker
-        dest=~/Library/ColorPickers/
+        dest="~/Library/ColorPickers/"
