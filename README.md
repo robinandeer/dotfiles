@@ -60,6 +60,16 @@ so here we are.
 - [x] TESLA
 - [ ] Weird
 
+### Intended usage
+
+#### Starting a new project
+1. Create a repo on GitHub
+2. Clone the repo using GitHub for Mac (access to pull request)
+  - place the clone in ``~/projects/<repo>``
+3. Track the cloned repo by adding it to SourceTree
+4. Set up a new Vagrant box for development testing
+  - question is how many boxes will fit on one single laptop?
+
 ### Credits
 
 The original inspiration was Michael Griffin's
