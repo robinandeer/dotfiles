@@ -3,6 +3,13 @@
   file: path=~/bin state=directory
 
 - name: install
-  copy: src={{ item }} dest="~/bin/" mode=755
+  copy: src={{ item }} dest="~/bin/" mode=0755
   with_fileglob:
     - "*"
+
+- name: clone today script
+  git: repo=https://gist.github.com/28798d28a6277e421594.git
+       dest="~/.apps/today"
+
+- name: link/install today script
+  file: src=~/.apps/today/today.py dest=~/bin/today mode=0755 state=link
