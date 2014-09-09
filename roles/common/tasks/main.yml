@@ -1,4 +1,7 @@
 ---
+- name: update homebrew
+  homebrew: update_homebrew=yes
+
 - name: tap dupes
   homebrew_tap: tap=homebrew/dupes
 
