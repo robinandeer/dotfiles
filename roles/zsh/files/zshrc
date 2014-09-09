@@ -10,7 +10,12 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Customize to your needs...
+# load custom shell dotfiles
+# ~/.localrc can be used for settings specific to "this" system
+for FILE in "${HOME}/.{aliases,exports,functions,path,localrc}"; do
+  [ -r "$FILE" ] && source "$FILE"
+done
+
 # +--- Options. --------------------------------------------------------------+
 setopt nobeep                  # i hate beeps (on error)
 setopt multios                 # pipe to multiple outputs

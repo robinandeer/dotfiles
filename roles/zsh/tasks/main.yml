@@ -9,14 +9,10 @@
 
 - name: install prezto
   git: repo=https://github.com/sorin-ionescu/prezto.git
-       dest=~/.zprezto
-
-- name: install today script
-  git: repo=https://gist.github.com/28798d28a6277e421594.git
-       dest=~/.apps/today
+       dest="~/.zprezto"
 
 - name: setup zshrc file
-  copy: src={{ item }} dest=~/.{{ item }}
+  copy: src={{ item }} dest="~/.{{ item }}"
   with_items:
     - zshrc
     - zlogin
