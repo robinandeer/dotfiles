@@ -1,0 +1,30 @@
+Host *
+    remoteforward 52698 127.0.0.1:52698
+Host rasta
+    hostname rastapopoulos.scilifelab.se
+    user robin.andeer
+    port 22
+Host uppmax
+    hostname milou.uppmax.uu.se
+    user randeer
+    port 22
+Host db
+    hostname clinical-db.scilifelab.se
+    user robin.andeer
+    port 22
+Host lims
+    hostname clinical-lims.scilifelab.se
+    user robin.andeer
+    port 22
+Host stage
+    hostname clinical-lims-stage.scilifelab.se
+    user robin.andeer
+    port 22
+Host preproc
+    hostname clinical-preproc.scilifelab.se
+    user robin.andeer
+    port 22
+Host dev
+    hostname clinical-dev.scilifelab.se
+    user robin.andeer
+    port 22
