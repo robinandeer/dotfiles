@@ -2,11 +2,15 @@
 - hosts: local
   roles:
     - common
+    - dev
     - cask
     - zsh
     - vim
+    - dotfiles
+    - ssh
+    - ipython
     - fonts
+    - utilities
     - sublime
     - colors
-    - utilities
     - scilifelab
