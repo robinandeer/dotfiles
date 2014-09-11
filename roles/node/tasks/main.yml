@@ -1,0 +1,7 @@
+---
+- name: install node globals
+  npm: name={{ item }} state=present global=yes
+  with_items:
+    - coffee-script
+    - bower
+    - brunch
