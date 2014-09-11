@@ -8,17 +8,20 @@
 - name: install CLI tools
   homebrew: name={{ item }} state=present
   with_items:
+    - coreutils       # OSX defaults are outdated
     - tmux
     - tree
     - readline
     - wget
     - ack
     - bash
+    - zsh
     - vim
     - git
     - ssh-copy-id
-    - zsh
     - rsync
+    - trash
+    # - python
   when: ansible_os_family == 'Darwin'
 
 - name: add convenience script

@@ -10,9 +10,9 @@ needs.
 
 ### Set up
 
-Run the bootstrap script. This will ensure gcc,
-[Homebrew](http://brew.sh/), and [Ansible](http://docs.ansible.com/) are
-installed:
+Intall the Mac OSX "Command Line Tools" which you can search for in the Apple Developer portal under [Downloads](https://developer.apple.com/downloads/).
+
+Run the bootstrap script. This will ensure [Homebrew](http://brew.sh/), and [Ansible](http://docs.ansible.com/) are installed:
 
     $ ./bootstrap.sh
 

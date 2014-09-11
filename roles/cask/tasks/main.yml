@@ -1,8 +1,6 @@
 ---
-# installs an arbitrary homebrew cask package
-
-- name: install trash CLI
-  homebrew: name=trash state=present
+- name: install homebrew case extension
+  homebrew: name=caskroom/cask/brew-cask state=present
 
 - name: tap cask/versions
   homebrew_tap: tap=caskroom/versions state=present
@@ -37,3 +35,11 @@
     - vagrant-manager
     - vagrant
     - virtualbox
+
+- name: install Quick Look plugins
+  homebrew_cask: name={{ item }} state=present
+  with_items:
+    - qlmarkdown
+    - quicklook-json
+    - qlcolorcode
+    - quicklook-csv
