@@ -11,17 +11,24 @@ fi
 # download and install Homebrew
 if [[ ! -x /usr/local/bin/brew ]]; then
   echo "Info   | Install   | homebrew"
+
+  # install homebrew
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
-  brew doctor
-  brew install caskroom/cask/brew-cask
+
+  # make sure system is OK
+  brew doctor && brew update
 fi
 
 # download and install Ansible
 if [[ ! -x /usr/local/bin/ansible ]]; then
   echo "Info   | Install   | Ansible"
-  brew tap homebrew/dupes
-  brew install apple-gcc42
-  brew update
+
+  # tap system duplicates, why?
+  # brew tap homebrew/dupes
+  # brew update
+  # brew install apple-gcc42
+
+  # install Ansible with homebrew
   brew install ansible
 fi
 
