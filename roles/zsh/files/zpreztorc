@@ -40,7 +40,7 @@ zstyle ':prezto:load' pmodule \
 
 # +--- Editor. ---------------------------------------------------------------+
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'vi'
+#zstyle ':prezto:module:editor' key-bindings 'vi'
 
 # Auto convert .... to ../..
 zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -57,7 +57,7 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 # History Substring Search.
 # -------------------------
 # set the query found color.
-# zstyle ':prezto:module:history-substring-search:color' found ''
+zstyle ':prezto:module:history-substring-search:color' found 'bold'
 
 # set the query not found color.
 # zstyle ':prezto:module:history-substring-search:color' not-found ''
@@ -70,7 +70,7 @@ zstyle ':prezto:module:editor' dot-expansion 'yes'
 # set the prompt theme to load
 # setting it to 'random' loads a random theme
 # auto set to 'off' on dumb terminals
-zstyle ':prezto:module:prompt' theme 'nicoulaj'
+zstyle ':prezto:module:prompt' theme 'sorin'
 
 # SSH.
 # ----

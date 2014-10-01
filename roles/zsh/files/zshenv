@@ -10,17 +10,19 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-# move to profile!
+# use OSX built-in navigation shortcuts
 bindkey -e
-bindkey '^[[1;9C' forward-word
-bindkey '^[[1;9D' backward-word
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
 
-# +--- Language. -------------------------------------------------------------+
+# +--- language. -------------------------------------------------------------+
 if [[ -z "$LANG" ]]; then
   export LANG='en_US.UTF-8'
 fi
 
-# +--- Editor. ---------------------------------------------------------------+
+# +--- editor. ---------------------------------------------------------------+
 # if [ "$TERM_PROGRAM" == 'iTerm.app' ]; then
 #   export EDITOR='subl -n --wait'
 #   export GIT_EDITOR='subl -n --wait'
@@ -36,7 +38,10 @@ export VISUAL='subl -n --wait'
 export PAGER='less'
 export MANPAGER='less'
 
-# +--- Less. -----------------------------------------------------------------+
+# +--- grep. -----------------------------------------------------------------+
+export GREP_COLOR='1;37'  # bold white
+
+# +--- less. -----------------------------------------------------------------+
 # set the default Less options
 # mouse-wheel scrolling has been disabled by -X (disable screen clearing)
 # remove -X and -F (exit if the content fits on one screen) to enable it
@@ -61,3 +66,12 @@ fpath=("/usr/local/bin/" $fpath)
 HISTFILE="${ZDOTDIR:-$HOME}/.zhistory"   # path to history file
 HISTSIZE=10000                           # max events to save (internal)
 SAVEHIST=10000                           # max events to save in history file
+
+# +--- tmux. -----------------------------------------------------------------+
+# for tmux: export 256color
+[ -n "$TMUX" ] && export TERM=screen-256color
+
+# +--- locale settings. ------------------------------------------------------+
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
