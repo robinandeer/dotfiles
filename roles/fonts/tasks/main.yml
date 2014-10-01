@@ -35,3 +35,15 @@
 - name: install Tesla
   get_url: url=https://dl.dropboxusercontent.com/u/112722970/TESLA.ttf
            dest="~/Library/Fonts/TESLA.ttf"
+
+- name: clone powerline fonts
+  git: repo=git@github.com:Lokaltog/powerline-fonts.git
+       dest="~/.ansible/fonts/powerline-fonts"
+
+- name: install Sauce Code Powerline
+  copy: src="{{ item }}" dest="~/Library/Fonts/"
+  with_fileglob: "~/.ansible/fonts/powerline-fonts/SourceCodePro/*.otf"
+
+- name: install InconsolataDz for Powerline
+  copy: src="~/.ansible/fonts/powerline-fonts/InconsolataDz/Inconsolata-dz for Powerline.otf"
+        dest="~/Library/Fonts/Inconsolata-dz for Powerline.otf"

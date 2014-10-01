@@ -1,5 +1,7 @@
 ---
+# playbook to provision a development MacBook
 - hosts: local
+
   roles:
     - common
     - dev

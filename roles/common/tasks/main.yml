@@ -6,7 +6,7 @@
   homebrew_tap: tap=homebrew/dupes
 
 - name: install CLI tools
-  homebrew: name={{ item }} state=present
+  homebrew: name={{ item }} state=latest
   with_items:
     - coreutils       # OSX defaults are outdated
     - tmux
@@ -23,6 +23,3 @@
     - trash
     # - python
   when: ansible_os_family == 'Darwin'
-
-- name: add convenience script
-  copy: src=configure dest=/usr/local/bin/configure
