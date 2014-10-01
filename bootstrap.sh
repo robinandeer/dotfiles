@@ -2,15 +2,18 @@
 
 set -e
 
+# modify the PATH, this should be updated in shell settings
+export PATH=/usr/local/bin:$PATH
+
 # download and install Command Line Tools
 if [[ ! -x /usr/bin/gcc ]]; then
-  echo "Info   | Install   | xcode"
+  printf "\n%s\n" 'info   | install   | xcode'
   xcode-select --install
 fi
 
 # download and install Homebrew
 if [[ ! -x /usr/local/bin/brew ]]; then
-  echo "Info   | Install   | homebrew"
+  printf "\n%s\n" 'info   | install   | homebrew'
 
   # install homebrew
   ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
@@ -21,7 +24,7 @@ fi
 
 # download and install Ansible
 if [[ ! -x /usr/local/bin/ansible ]]; then
-  echo "Info   | Install   | Ansible"
+  printf "\n%s\n" 'info   | install   | ansible'
 
   # tap system duplicates, why?
   # brew tap homebrew/dupes
@@ -31,9 +34,5 @@ if [[ ! -x /usr/local/bin/ansible ]]; then
   # install Ansible with homebrew
   brew install ansible
 fi
-
-# modify the PATH
-# this should be subsequently updated in shell settings
-export PATH=/usr/local/bin:$PATH
 
 ansible-playbook local.yml -K
