@@ -1,6 +1,6 @@
 ---
-- name: install homebrew case extension
-  homebrew: name=caskroom/cask/brew-cask state=present
+# - name: install homebrew case extension
+#   homebrew: name=caskroom/cask/brew-cask state=present
 
 - name: tap cask/versions
   homebrew_tap: tap=caskroom/versions state=present

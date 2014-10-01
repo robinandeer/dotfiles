@@ -21,8 +21,10 @@ Theme - Glacier
 ToDone
 TOML
 VimL
+AutoFileName
 
 # under review
+Origami
 Gutter Color
 SublimeLinter-coffeelint
 SublimeLinter-csslint

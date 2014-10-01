@@ -14,5 +14,5 @@
 - name: link/install today script
   file: src=~/.apps/today/today.py dest=~/bin/today mode=0755 state=link
 
-- name: install the interactive grep tool: percol
+- name: install the interactive grep tool - percol
   pip: name=percol state=present
