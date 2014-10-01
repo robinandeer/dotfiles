@@ -24,28 +24,28 @@ alias rd='rmdir'
 # make executable
 alias ax='chmod a+x'
 
-# some OS X-only stuff.
+# some OS X-only stuff
 if [[ "$OSTYPE" == darwin* ]]; then
-  # short-cuts for copy-paste.
+  # short-cuts for copy-paste
   alias c='pbcopy'
   alias p='pbpaste'
   alias path='pwd | pbcopy'
 
-  # remove all items safely, to Trash (`brew install trash`).
+  # remove all items safely, to Trash (`brew install trash`)
   alias rm='trash'
 
-  # case-insensitive pgrep that outputs full path.
+  # case-insensitive pgrep that outputs full path
   alias pgrep='pgrep -fli'
 
   # show and hide hidden files in Finder
   alias show-hidden='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
   alias hide-hidden='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 else
-  # process grep should output full paths to binaries.
+  # process grep should output full paths to binaries
   alias pgrep='pgrep -fl'
 fi
 
-# +--- Tools. ----------------------------------------------------------------+
+# +--- tools. ----------------------------------------------------------------+
 # top defaults
 alias top='top -s 5 -o cpu -stats pid,user,command,cpu,rsize,vsize,threads,state'
 
@@ -68,7 +68,7 @@ fi
 # lists the ten most used commands
 alias history-stat="history 0 | awk '{print \$2}' | sort | uniq -c | sort -n -r | head"
 
-# +--- Improvements. ---------------------------------------------------------+
+# +--- improvements. ---------------------------------------------------------+
 # disable sertificate check for wget.
 alias wget='wget --no-check-certificate'
 
@@ -97,3 +97,9 @@ alias la="ls -lahF ${colorflag}"
 
 # list only directories
 alias lsd="ls -lhF ${colorflag} | grep --color=never '^d'"
+
+# list oldest first sort
+alias lt="ls -laptrhF ${colorflag}"
+
+# +--- ubuntu. ---------------------------------------------------------------+
+alias ins="sudo apt-get install --yes"
