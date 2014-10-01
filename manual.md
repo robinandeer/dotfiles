@@ -1,29 +1,30 @@
+# Manual installation instructions
 
 Install Sublime Package Control:
 - https://sublime.wbond.net/installation
 
-# Secret files with private passwords
+## Secret files with private passwords
 ~/.gauth
 ~/.pypirc
 ~/Library/Keychains/login.keychain
 /Library/Keychains/system.keychain
 
-# Install App Store apps
+## Install App Store apps
 - Delineato Pro, Keynote, Sip
 
 
-# Install Mac apps
+## Install Mac apps
 * Spectacles: ctrl+alt+[left/right] for "Left/Right Half"
 * GitHub: setup + install command line helpers
 
-# Settings:
-## General
+## Settings:
+### General
 - Default web browser: Google Chrome
 
-## Security & Privacy
+### Security & Privacy
 - Allow apps downloaded from: Anywhere
 
-## Backup solutions
+### Backup solutions
 
 - Dropbox (28GB, off-site, versioned, limited space, restricted)
 	- clearly organized content of important files (passwords, licenses, etc.)
@@ -66,7 +67,7 @@ Install Sublime Package Control:
 	- Passwords and licenses
 
 
-## Inventory
+### Inventory
 - iCloud
 	- Keynote
 		- DNA club/SciLifeLab (assets)

@@ -1,2 +1,3 @@
 ---
+# playbook to provision a Ubuntu development Vagrant machine
 hosts: vagrant

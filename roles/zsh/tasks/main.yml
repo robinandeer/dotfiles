@@ -20,6 +20,10 @@
     - zpreztorc
     - zshenv
 
+- name: copy custom prompt
+  copy: src=prompt_nicoulajmod_setup
+        dest="~/.zprezto/modules/prompt/functions/prompt_nicoulajmod_setup"
+
 - name: add zsh to list of shells
   lineinfile: >
     backup=yes

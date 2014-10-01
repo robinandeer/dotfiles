@@ -1,0 +1,67 @@
+#
+# A simple theme that displays only relevant information.
+#
+# Authors:
+#   Julien Nicoulaud <julien.nicoulaud@gmail.com>
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Robin Andeer <robin.andeer@gmail.com>
+#
+# Features:
+#   - One line.
+#   - VCS information in the right prompt.
+#   - Only shows the path on the right prompt by default.
+#   - Uses a different color depending on if the last command succeeded/failed.
+#   - Shows user@hostname if connected through SSH.
+#   - Shows if logged in as root or not.
+#
+# For my own and others sanity
+# git:
+#   %b => current branch
+#   %a => current action (rebase/merge)
+# prompt:
+#   %F => color dict
+#   %f => reset color
+#   %~ => current path
+#   %* => time
+#   %n => username
+#   %m => shortname host
+#   %(?..) => prompt conditional - %(condition.true.false)
+
+function prompt_nicoulajmod_precmd {
+  vcs_info
+}
+
+function prompt_nicoulajmod_setup {
+  setopt LOCAL_OPTIONS
+  unsetopt XTRACE KSH_ARRAYS
+  prompt_opts=(cr percent subst)
+
+  # load required functions
+  autoload -Uz add-zsh-hook
+  autoload -Uz vcs_info
+
+  # add hook for calling vcs_info before each command
+  add-zsh-hook precmd prompt_nicoulajmod_precmd
+
+  # customizable parameters
+  local max_path_chars=30
+  local user_char='❯'
+  local root_char='❯❯❯'
+  local success_color='%F{green}'
+  local failure_color='%F{red}'
+  local vcs_info_color='%F{yellow}'
+
+  # set vcs_info parameters
+  zstyle ':vcs_info:*' enable git
+  zstyle ':vcs_info:git*' check-for-changes true
+  zstyle ':vcs_info:git*' unstagedstr '%F{yellow}●%f'
+  zstyle ':vcs_info:git*' stagedstr '%F{green}●%f'
+  zstyle ':vcs_info:git*' actionformats "(%b|%a)"
+  zstyle ':vcs_info:git*' formats "(%b)"
+
+  # define prompts
+  PROMPT="%(?.${success_color}.${failure_color})${SSH_TTY:+[%n@%m]}%(!.${root_char}.${user_char})%f "
+  RPROMPT="%~ ${vcs_info_color}"'${vcs_info_msg_0_}'"%f"
+}
+
+prompt_nicoulajmod_setup "$@"
