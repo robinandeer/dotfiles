@@ -8,7 +8,7 @@ set -o nounset   # exit when trying to use undeclared variables
  
 main() {
   # modify the PATH, this should be updated in shell settings
-  export PATH=/usr/local/bin:$PATH
+  export PATH="/usr/local/bin:${PATH}"
 
   # download and install Command Line Tools
   if [[ ! -x /usr/bin/gcc ]]; then
