@@ -1,5 +1,5 @@
 # Personal computer provisioning
-This is my personal MacBook provisioning. There are many like it, but this one is mine.
+This is my personal MacBook provisioning. There are many like it, but this one is mine. It's also my dotfiles.
 
 For that reason it's largely set up for my particular needs. If you want to use it yourself I'd recommend reading through it first. Then fork, remove as much as possible and rebuild, making changes as you go, so it fits your needs.
 
